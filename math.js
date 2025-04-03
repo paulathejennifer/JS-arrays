@@ -179,12 +179,67 @@ console.log(myOddNumbers(array));
 //    console.log(`My home is ${replaceHome(slang)} and I am so proud of it. Indeed i have come so far`);
    
 function isPalindrome(input){
-    return input == input.split('').reverse().join('')
+    return input.toLowerCase() == input.toLowerCase().split('').reverse().join('')
 }
 const word = "madam";
-const wordB = "racecar"
+const wordB = "racecAr"
 console.log(isPalindrome(word));
-console.log(isPalindrome());
+console.log(isPalindrome(wordB));
+
+
+function myPal(text){
+    let left = 0;
+    let right = text.length -1;
+
+    while(left < right){
+        if (text[left] !== text[right]){
+            return false
+        
+        left++;
+        right--;
+        }return true
+    }
+}const text = "madAm"
+const textB = "us"
+console.log(myPal(text));
+console.log(myPal(textB));
+
+function capitalizeWords(word){
+    return word.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
+}
+const words = "i love cooking chapatis";
+console.log(capitalizeWords(words));
+
+function lowerWords(txt){
+    return txt.split(' ').map(txt => txt.charAt(0).toLowerCase() + txt.slice(1)).join(' ')
+}
+const txt = "How was your trip to Dubai last weekend?"
+console.log(lowerWords(txt));
+
+//Palindrome function for number words and phrases
+function myPal(input){
+    const cleanedInput = input.toString().toLowerCase().replace(/[a-z0-9]/g, "");
+
+    return cleanedInput === cleanedInput.split('').reverse().join('');
+}
+// const input = 121
+console.log(myPal("input"));
+console.log(myPal(121));
+console.log(myPal("mam"));
+console.log(myPal(12321));   
+console.log(myPal("hello"));   
+
+
+
+
+// function create(){
+//     return strings;
+// }
+// console.log(create("hello", "boy", "I","Hope", "You're Good"));
+
+
+
+
 
 
 //
